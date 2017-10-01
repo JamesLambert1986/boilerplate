@@ -1,0 +1,27 @@
+{
+	"sitemap": {
+		"level_1": [
+			{
+				"title": "Home",
+				"page_type": "home",
+				"page_title": "Homepage",
+				"page_class": "home",
+				"nav": "header"
+			},
+			{
+				"title": "About us",
+				"nav": "header",
+				"level_2": [
+					{
+						"title": "Company",
+						"page_title": "Company"
+					},
+					{
+						"title": "Future",
+						"page_title": "Future of something or other"
+					}
+				]
+			}
+		]
+	}
+}

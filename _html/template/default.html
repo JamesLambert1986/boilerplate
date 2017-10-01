@@ -1,0 +1,129 @@
+<!-- DATA -->
+{
+	"_cache": "1",
+	"_jquery": "jquery-2.1.4.js",
+	"site_title <!-- #title:test_title -->": "Boilerplate",
+	"site_description": "A fairly Short description",
+	"site_facebook_url": "https://www.facebook.com/",
+	"site_twitter": "https://twitter.com/",
+	"site_share_image": "[Var:path_assets]favicons/favicon.png",
+	"site_google_analytics": "UA-XXXXXXXX-X",
+	"_content_types": {
+		"page": {
+            "page_type": ["content","experience","home","product","zone","contact"],
+            "navigation": ["header","footer","none"]
+		},
+		"video": {
+			"page_type": "video"
+		},
+		"podcast": {
+			"page_type": "article",
+			"podcast_id": "",
+			"podcast_iframe": ""
+		}
+	},
+	"site_social": {
+		"_type": "loop",
+		"_name": "social",
+		"_fields": {
+			"title": "twitter",
+			"url": "https://twitter.com/",
+			"icon": "twitter"
+		},
+		"_items": [
+			{
+				"title": "twitter",
+				"url": "https://twitter.com/",
+				"icon": "twitter"
+			},
+			{
+				"title": "linkedin",
+				"url": "https://linkedin.com/",
+				"icon": "linkedin"
+			}
+		]
+	}
+}
+<!-- ENDDATA -->
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+   
+	<!-- IF:page_type==home -->
+    <title>[Var:site_title] | [Var:site_description]</title>
+    <!-- ELSE:page_type -->
+    <title>[Var:page_title] | [Var:site_title]</title>
+    <!-- ENDIF:page_type -->
+    
+    
+    [Var:_meta]
+    
+    <link href="[Var:path_assets]scss/styles.css?cache=[Var:_cache]" media="screen" type="text/css" rel="stylesheet" />
+    <link href="[Var:path_assets]scss/print_styles.css?cache=[Var:_cache]" media="print" type="text/css" rel="stylesheet" />
+        
+    <!-- IF:site_google_analytics -->
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', '[Var:site_google_analytics]', 'auto');
+	  ga('send', 'pageview');
+	</script>
+	<!-- ENDIF:site_google_analytics -->
+    
+</head>
+<body class="site page--[Var:page_type] [Var:alt_class]" id="top">
+
+
+	
+	<header>
+		<div class="container">
+		
+			<nav>
+				<ul class="top">
+					<!-- FOREACH:sitemap->level_1 -->
+					
+					<li class="[Var:class]">
+						<a href="[Var:href]">[Var:title]</a>
+					</li>
+					<!-- ENDFOREACH:sitemap->level_1 -->
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+    
+	<div class="container">
+	[Var:breadcrumb]
+	</div>
+	
+    <div class="page" id="page">
+    	[page]
+	</div>
+	
+  	
+   	<footer>
+		<div class="container">
+		
+			<nav class="connect">
+				<ul class="social">
+				<!-- FOREACH:site_social->_items -->
+					<li><a href="[Var:url]" title="[Var:title]">
+
+					<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="[Var:path_assets]svg/vectors.svg?cache=[Var:_cache]#[Var:icon]"></use></svg>
+					</a></li>
+				<!-- ENDFOREACH:site_social->_items -->
+				</ul>
+			</nav>
+		</div>
+   	</footer>
+   
+    <script src='[Var:path_assets]js/_jquery/[Var:_jquery]'></script>
+    <script src="[Var:path_assets]js/scripts.js?cache=[Var:_cache]"></script>
+	
+
+</body>
+</html>

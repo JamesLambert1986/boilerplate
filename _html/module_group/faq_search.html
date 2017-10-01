@@ -1,0 +1,52 @@
+<!-- DATA -->
+{
+	"title" : "Members <span>Testimonials</span>",
+	"_modules" : [
+		{
+			"_type": "_module",
+			"_name": "testimonial",
+			"_data": {
+				"author": "phil"
+			},
+			"id": "test1"
+		},
+		{
+			"_type": "_module",
+			"_name": "testimonial",
+			"id": "test2"
+		},
+		{
+			"_type": "_module",
+			"_name": "testimonial",
+			"id": "test3"
+		}
+	]
+}
+<!-- ENDDATA -->
+
+
+
+<div class="testimonials__group">
+	
+	
+	<h2>[Var:title]</h2>
+	
+	<!-- FOREACH:_modules -->
+		<!-- IF:id==test1 -->
+			<input id="[Var:id]" name="testimonials" type="radio" checked=""/>
+		<!-- ELSE:id -->
+			<input id="[Var:id]" name="testimonials" type="radio" />
+		<!-- ENDIF:id -->
+	<!-- ENDFOREACH:_modules -->
+	
+	
+	[Var:_modules]
+	
+	<!-- FOREACH:_modules -->
+	
+	<label for="[Var:id]">[Var:id]</label>
+	
+	<!-- ENDFOREACH:_modules -->
+	
+	
+</div>

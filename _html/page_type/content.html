@@ -1,0 +1,41 @@
+<!-- DATA -->
+{
+	"page_title <!-- #title:A_test -->": "Page Title",
+	"page_content <!-- The main content -->": "<p>lorum ipsum</p>",
+	"modules": {
+		"_type": "module_group",
+		"_name": "modules",
+		"_allowed_modules": ["content","video"],
+		"_modules": [
+			{
+				"_type": "module",
+				"_name": "content"
+			},
+			{
+				"_type": "module",
+				"_name": "content"
+			}
+		]
+	}
+}
+<!-- ENDDATA -->
+
+<div class="container">
+	
+	<h1>[Var:page_title]</h1>
+	[Var:page_content]
+</div>
+
+
+
+
+
+<div class="container">
+	
+	<h1>Modules</h1>
+	[Var:modules]
+</div>
+
+
+
+

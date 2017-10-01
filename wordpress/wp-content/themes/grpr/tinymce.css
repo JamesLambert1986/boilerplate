@@ -1,0 +1,20 @@
+
+.intro {
+
+	font-size: 24px;
+	font-weight: bold;
+}
+
+table {
+
+	width: 100%;
+}
+
+blockquote p:first-child:before{
+	
+   content: open-quote;
+}
+blockquote p:last-child:after{
+
+	content: close-quote;
+}
